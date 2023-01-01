@@ -40,7 +40,7 @@ image::https://github.com/smudger/aoc2019-rust/actions/workflows/benchmark.yml/b
 [options="header"cols=",m,m"]
 |===========================
 ,Part 1,Part 2
-{aoc}/1[Day 01],{repo}/day01/src/lib.rs[0 ms],{repo}/day01/src/lib.rs[20 ms]
+{aoc}/1[Day 01],{repo}/day01/src/lib.rs[2200 ns],{repo}/day01/src/lib.rs[3600 ns]
 
 |===========================
 
