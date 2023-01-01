@@ -16,13 +16,13 @@ fn main() {
         let part1 = "{repo}/day".to_string()
             + day
             + "/src/lib.rs["
-            + &part1.as_millis().to_string()
-            + " ms]";
+            + &part1.as_nanos().to_string()
+            + " ns]";
         let part2 = "{repo}/day".to_string()
             + day
             + "/src/lib.rs["
-            + &part2.as_millis().to_string()
-            + " ms]";
+            + &part2.as_nanos().to_string()
+            + " ns]";
         csv_writer
             .write_record(&[pretty_day, part1, part2])
             .unwrap();

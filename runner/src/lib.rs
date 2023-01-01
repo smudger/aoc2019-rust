@@ -1,7 +1,11 @@
 use std::time::Duration;
 use took::Timer;
 
-pub fn jobs() -> &'static [(&'static str, fn() -> String, fn() -> String)] {
+pub fn jobs() -> &'static [(
+    &'static str,
+    fn(Option<&str>) -> String,
+    fn(Option<&str>) -> String,
+)] {
     &[
         ("01", day01::part1, day01::part2),
         // ("02", day02::part1, day02::part2),
@@ -16,11 +20,11 @@ pub fn times(runs: usize) -> Vec<(&'static str, Duration, Duration)> {
         .collect()
 }
 
-fn benchmark(solution: fn() -> String, runs: usize) -> Duration {
+fn benchmark(solution: fn(Option<&str>) -> String, runs: usize) -> Duration {
     (0..runs)
         .map(|_| {
             let took = Timer::new();
-            solution();
+            solution(None);
             took.took().into_std()
         })
         .min()
